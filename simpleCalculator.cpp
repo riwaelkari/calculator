@@ -1,23 +1,30 @@
 #include <iostream>
-#include <limits>
-using namespace std;
+#include "functions.h"
 
-double multiply(double a, double b) {
-    return a * b;
-}
-
-double divide(double a, double b) {
-    //tried to return NaN here because it makes most of sense here
-    if (b==0) return std::numeric_limits<double>::quiet_NaN();
-    return a / b;
-}
+// compile using: g++-15 simpleCalculator.cpp functions.cpp -o simpleCalculator
+// run using: ./simpleCalculator
 int main(){
     double x, y;
+    char operation;
+    double result;
     std::cout << "Give your first number: ";
     std::cin >> x;
     std::cout << "Give your second number: ";
     std::cin >> y;
-    std::cout << x << "*" << y << " = " << multiply(x,y) << std::endl;
-    std::cout << x << "/" << y << " = " << divide(x,y) << std::endl;
+    std::cout << "Choose one of the operations (+, -, *, /):" << std::endl;
+    std::cin >> operation;
+    switch (operation) {
+        case '+': result = sum(x,y); break;
+        case '-': result = subtract(x,y); break;
+        case '*': result = multiply(x,y); break;
+        case '/': result = divide(x,y); break;
+        default: std::cerr << "Invalid operation!" << std::endl;
+        return 1;
+    }
+    std::cout << result << std::endl;
+
+    /*std::cout << x << "*" << y << " = " << multiply(x,y) << std::endl;
+    std::cout << x << "/" << y << " = " << divide(x,y) << std::endl;*/
+    convert_to_b(2, 1024);
     return 0;
 }
