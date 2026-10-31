@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakePythonSetting">
+    <option name="pythonIntegrationState" value="YES" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug-WSL Clang 21" ENABLED="true" CONFIG_NAME="Debug" TOOLCHAIN_NAME="WSL Clang 21" />
+    </configurations>
+  </component>
+</project>
